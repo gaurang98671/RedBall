@@ -41,7 +41,8 @@ public class RedBall extends JComponent implements ActionListener, MouseMotionLi
     //public int bestscore1;
     public boolean gameOver, started;
     static JFrame wind;
-    public static void showWind(String player2) {
+    public static void showWind(String player2) 
+    {
     	
         player=player2;
         wind = new JFrame("RedBall/GamePinfo");
@@ -57,6 +58,9 @@ public class RedBall extends JComponent implements ActionListener, MouseMotionLi
         tt.start();
         Thread go = g.new GameOver();
         go.start();
+        Music_player mm=new Music_player("C:\\Users\\pawar\\eclipse-workspace\\Red_ball\\Music\\ChillingMusic.wav");
+        mm.play();
+       
     }
 
     public void newball(int ballx, int bally, int ballxspeed, int ballyspeed) {
@@ -202,7 +206,7 @@ public class RedBall extends JComponent implements ActionListener, MouseMotionLi
         if (ballx >= paddlex && ballx <= paddlex + 100 && bally >= 475) {
             ballySpeed = -y;
             score++;
-            java.awt.Toolkit.getDefaultToolkit().beep();
+            
         }
 
         
